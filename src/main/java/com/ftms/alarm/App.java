@@ -1,16 +1,17 @@
-package com.ftms;
+package com.ftms.alarm;
+
+import com.ftms.alarm.utils.MyUtils;
+import gnu.io.CommPortIdentifier;
+import gnu.io.NoSuchPortException;
+import gnu.io.PortInUseException;
+import gnu.io.SerialPort;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.lang.Thread;
 
-import com.ftms.alarm.utils.MyUtils;
-import gnu.io.*;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-
-@SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
+@Component
 public class App {
 
     // 从串口来的输入流
@@ -32,7 +33,7 @@ public class App {
      * 通过轮询模式监听串口COM4
      * 当串口COM4传来数据的时候读取数据
      */
-    public static void main(String[] args) throws NoSuchPortException, PortInUseException {
+    public void alarmCenter() throws NoSuchPortException, PortInUseException {
 
         //获取并打开串口com4
         com4 = CommPortIdentifier.getPortIdentifier("COM4");
@@ -45,7 +46,7 @@ public class App {
         listenThread.start();
 
     }
-    static class  WriteThread extends Thread {
+     class  WriteThread extends Thread {
         @Override
         public void run() {
             while (true) {
@@ -105,7 +106,7 @@ public class App {
             }
         }
     }
-    static class ListenThread extends Thread {
+     class ListenThread extends Thread {
         @Override
         public void run() {
             try {

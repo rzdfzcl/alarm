@@ -12,8 +12,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RS485Mapper
 {
-
-
     /**
      * 新增通讯记录
      *

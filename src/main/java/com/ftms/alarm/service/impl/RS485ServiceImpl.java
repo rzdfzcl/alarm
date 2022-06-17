@@ -3,14 +3,13 @@ package com.ftms.alarm.service.impl;
 import com.ftms.alarm.domain.RS485;
 import com.ftms.alarm.mapper.RS485Mapper;
 import com.ftms.alarm.service.IRS485Service;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
-
-@Service
+@Service("rs485Service")
 public class RS485ServiceImpl implements IRS485Service {
 
-    @Resource
+    @Autowired
     private RS485Mapper rs485Mapper;
 
     @Override

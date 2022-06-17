@@ -5,18 +5,18 @@ import static org.junit.Assert.assertTrue;
 import com.ftms.alarm.domain.RS485;
 import com.ftms.alarm.service.IRS485Service;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.junit.runner.RunWith;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import javax.annotation.Resource;
 import java.util.Date;
 
 /**
  * Unit test for simple App.
  */
-@Component
 public class AppTest 
 {
-    @Autowired
+    @Resource
     private IRS485Service rs485Service;
     /**
      * Rigorous Test :-)
@@ -35,6 +35,7 @@ public class AppTest
         rs485.setLrc((byte) 0x55);
         rs485.setCurrentDate(new Date());
         System.out.println(rs485);
+
         int n = rs485Service.insertRS485(rs485);
         if (n > 0) {
             System.out.println("插入成功");

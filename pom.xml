@@ -20,7 +20,7 @@
     <!-- SpringBoot的依赖配置-->
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-dependencies</artifactId>
+      <artifactId>spring-boot-starter</artifactId>
       <version>2.7.0</version>
       <type>pom</type>
       <scope>import</scope>
@@ -31,24 +31,24 @@
       <artifactId>druid-spring-boot-starter</artifactId>
       <version>1.2.11</version>
     </dependency>
-    <!--引入 junit 单元测试框架-->
+    <!--mysql依赖-->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.2</version>
-      <scope>test</scope>
-    </dependency>
-    <!-- 添加对485接口的依赖 -->
-    <dependency>
-      <groupId>org.rxtx</groupId>
-      <artifactId>rxtx</artifactId>
-      <version>2.1.7</version>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <scope>runtime</scope>
+      <version>8.0.29</version>
     </dependency>
     <!--引入 mybatis-spring-boot-starter 的依赖-->
     <dependency>
       <groupId>org.mybatis.spring.boot</groupId>
       <artifactId>mybatis-spring-boot-starter</artifactId>
       <version>2.2.2</version>
+    </dependency>
+    <!-- 添加对485接口的依赖 -->
+    <dependency>
+      <groupId>org.rxtx</groupId>
+      <artifactId>rxtx</artifactId>
+      <version>2.1.7</version>
     </dependency>
     <!-- 简化domain的依赖-->
     <dependency>
@@ -57,19 +57,19 @@
       <version>1.18.22</version>
       <scope>compile</scope>
     </dependency>
-    <!--mysql依赖-->
+    <!--引入 junit 单元测试框架-->
     <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <scope>runtime</scope>
-      <version>8.0.29</version>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
     </dependency>
-      <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-web</artifactId>
-          <version>2.7.0</version>
-          <scope>compile</scope>
-      </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <version>RELEASE</version>
+      <scope>compile</scope>
+    </dependency>
   </dependencies>
 
   <build>

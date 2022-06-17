@@ -2,17 +2,23 @@ package com.ftms.alarm.controller;
 
 import com.ftms.alarm.domain.RS485;
 import com.ftms.alarm.service.IRS485Service;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.annotation.Resource;
 import java.util.Date;
 
-@Component
+@Controller
+@RequestMapping("/rs485")
 public class RS485Controller {
-    @Resource
+    @Autowired
     private IRS485Service rs485Service;
 
-    public void test() {
+    @PostMapping("/insert")
+    @ResponseBody
+    public void insertRS485() {
         RS485 rs485 = new RS485();
         rs485.setPrefix((byte) 0xAA);
         rs485.setAddress((byte) 0x01);
@@ -27,8 +33,4 @@ public class RS485Controller {
         }
     }
 
-    public static void main(String[] args) {
-        RS485Controller rs485Controller = new RS485Controller();
-        rs485Controller.test();
-    }
 }

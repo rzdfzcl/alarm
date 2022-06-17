@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ftms.alarm.mapper.RS485Mapper">
+
+    <resultMap type="RS485" id="RS485Result">
+        <result property="id"    column="id"    />
+        <result property="prefix"    column="prefix"    />
+        <result property="address"    column="address"    />
+        <result property="lrc"    column="lrc"    />
+        <result property="currentDate"    column="currentDate"    />
+    </resultMap>
+
+    <insert id="insertRS485" parameterType="RS485" >
+        insert into rs485
+            (prefix, address, lrc, currentDate)
+            value
+                (#{prefix}, #{address}, #{lrc}, #{currentDate})
+    </insert>
+</mapper>

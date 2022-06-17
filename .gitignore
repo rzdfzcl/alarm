@@ -43,6 +43,4 @@ rebel.xml
 !*/build/*.java
 !*/build/*.html
 !*/build/*.xml
-/mars-admin/src/main/java/com/mars/web/test/TestActiviti.java
-/mars-admin/src/main/java/com/mars/web/test/TestString.java
-/mars-admin/src/main/resources/application-dev.yml
+
